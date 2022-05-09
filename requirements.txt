@@ -1,4 +1,5 @@
 joblib
 eli5
 matplotlib
+streamlit
 jinja2==2.11
