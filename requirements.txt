@@ -1,3 +1,4 @@
 joblib
 eli5
 matplotlib
+jinja2==2.11
