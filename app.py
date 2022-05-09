@@ -9,7 +9,7 @@ import streamlit as st
 
 st.title("Style detection")
 
-labels = ["Mishnah", "Halacha", "Yerushalmi", "Bavli", "Aggadah", "Tanchuma", "Unknown"]
+labels = ["Mishnah", "Halacha", "Yerushalmi", "Bavli", "Aggadah", "Tanchuma"]#, "Unknown"]
 mode = "normal"
 # mode = "morph"
 
@@ -29,7 +29,7 @@ inp_text = st.text_area(label, value=default_text)
 
 
 import eli5
-ex = eli5.explain_prediction(model, inp_text, vec=vec)
+ex = eli5.explain_prediction(model, inp_text, vec=vec, target_names=labels)
 exhtml = eli5.formatters.html.format_as_html(ex)
 res = exhtml.replace("eli5-weights", "eli5weights").replace("\n", " ")
 st.markdown(res, unsafe_allow_html=True)
