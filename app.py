@@ -140,10 +140,28 @@ default_text = "וידבר ה' אל משה במדבר סיני, זהו שאמר 
 label = "Enter a paragraph here"
 
 #inp_text = st.text_input(label, value=default_text)
+st.markdown("""
+<style>
+textarea {
+  unicode-bidi:bidi-override;
+  direction: RTL;
+}
+</style>
+    """, unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+p {
+  unicode-bidi:bidi-override;
+  direction: RTL;
+  font-size: 30px;
+  font-family: 'David Libre';
+}
+</style>
+    """, unsafe_allow_html=True)
 
 # Use it like this:
-wrapped_default_text = """<div dir="rtl">%s</div>""" % (default_text)
-inp_text = st.text_area(label, value=wrapped_default_text)
+inp_text = st.text_area(label, value=default_text)
 inp_text_without_tags = remove_html_tags(inp_text)
 filtered_text = filter_non_hebrew(inp_text_without_tags)
 
