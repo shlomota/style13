@@ -125,6 +125,18 @@ def remove_html_tags(text):
     clean = re.compile('<.*?>')
     return re.sub(clean, '', text)
 
+def contains_hebrew(text):
+    return bool(re.search('[\u0590-\u05FF]', text))
+
+def mark_hebrew_paragraphs(html):
+    soup = BeautifulSoup(html, 'html.parser')
+
+    for p in soup.find_all('p'):
+        if contains_hebrew(p.get_text()):
+            p['class'] = p.get('class', []) + ['hebrew']
+
+    return str(soup)
+
 st.title("Style detection")
 
 labels = ["Mishnah", "Halacha", "Yerushalmi", "Bavli", "Aggadah", "Tanchuma"]#, "Unknown"]
@@ -149,12 +161,13 @@ textarea {
 </style>
     """, unsafe_allow_html=True)
 
+
 st.markdown("""
 <style>
-p {
+.hebrew {
   unicode-bidi:bidi-override;
   direction: RTL;
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'David Libre';
 }
 </style>
@@ -169,5 +182,6 @@ ex = eli5.explain_prediction(model, filtered_text, vec=vec, target_names=labels)
 exhtml = eli5.formatters.html.format_as_html(ex)
 exhtml = clean_text(exhtml)
 exhtml = do_highlight_highest(exhtml)
+exhtml = mark_hebrew_paragraphs(exhtml)
 res = exhtml.replace("eli5-weights", "eli5weights").replace("\n", " ")
 st.markdown(res, unsafe_allow_html=True)
