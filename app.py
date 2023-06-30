@@ -14,7 +14,7 @@ def filter_non_hebrew(text):
     # The Unicode range for Hebrew is U+0590 to U+05FF.
     # The Unicode range for Hebrew diacritical marks is U+0591 to U+05BD, U+05BF, U+05C1, U+05C2, U+05C4, U+05C5, U+05C7.
     # So, the Unicode range for Hebrew letters without diacritical marks is U+05D0 to U+05EA.
-    hebrew_text = re.sub(r'[^\u05D0-\u05EA]', '', text)
+    hebrew_text = re.sub(r'[^\u05D0-\u05EA ]', '', text)
     return hebrew_text
 
 
