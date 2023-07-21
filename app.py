@@ -4,7 +4,7 @@ import re
 import eli5
 from bs4 import BeautifulSoup
 
-st.set_page_config(layout='wide')
+#st.set_page_config(layout='wide')
 
 CSS_STREAMLIT_MARGIN_HACK = """
 <style>
@@ -133,7 +133,7 @@ def mark_hebrew_paragraphs(html):
 
 st.title("Style detection")
 
-labels = ["Mishnah", "Halacha", "Yerushalmi", "Bavli", "Aggadah", "Tanchuma"]#, "Unknown"]
+labels = ["Mishnah", "Halacha", "Yerushalmi", "Bavli", "Aggadah", "Tanḥuma"]#, "Unknown"]
 mode = "normal"
 # mode = "morph"
 
