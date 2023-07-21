@@ -133,7 +133,7 @@ def mark_hebrew_paragraphs(html):
 
 st.title("Style detection")
 
-labels = ["Mishnah", "Halacha", "Yerushalmi", "Bavli", "Aggadah", "Tanḥuma"]#, "Unknown"]
+labels = ["Mishnah", "Halakha", "Yerushalmi", "Bavli", "Aggadah", "Tanḥuma"]#, "Unknown"]
 mode = "normal"
 # mode = "morph"
 
