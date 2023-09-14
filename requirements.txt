@@ -1,5 +1,4 @@
-scikit-learn==0.20.3
 git+https://github.com/shlomota/eli5
-joblib==1.1.0
+joblib
 matplotlib
 bs4
