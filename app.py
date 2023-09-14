@@ -1,7 +1,7 @@
 import joblib
 import streamlit as st
 import re
-import eli5
+import eli555
 from bs4 import BeautifulSoup
 
 #st.set_page_config(layout='wide')
