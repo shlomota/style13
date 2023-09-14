@@ -1,4 +1,4 @@
+git+https://github.com/shlomota/eli5
 joblib
 matplotlib
-git+https://github.com/shlomota/eli5
 bs4
