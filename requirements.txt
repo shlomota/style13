@@ -1,5 +1,5 @@
 joblib
 scikit-learn
 matplotlib
-eli5==0.10.1
+git+https://github.com/shlomota/eli5
 bs4
