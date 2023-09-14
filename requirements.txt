@@ -1,5 +1,5 @@
 joblib
 scikit-learn==0.21
 matplotlib
-eli5
+eli5==0.10.1
 bs4
