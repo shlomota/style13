@@ -1,5 +1,4 @@
 joblib
-scikit-learn
 matplotlib
 git+https://github.com/shlomota/eli5
 bs4
